@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #030812;
   color: #8892b0;
@@ -101,13 +105,13 @@ nav ul li a.active {
   background-color: rgba(0, 230, 168, 0.08);
 }
 
-/* Full Screen Hero Section */
+/* Hero Section */
 .hero-section {
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 120px 80px 60px 80px; /* Top padding offsets fixed navbar */
+  padding: 140px 80px 80px 80px;
 }
 
 .hero-content {
@@ -116,7 +120,6 @@ nav ul li a.active {
   margin: 0 auto;
 }
 
-/* Badge Status */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -146,7 +149,6 @@ nav ul li a.active {
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 168, 0); }
 }
 
-/* Typography Adjustments for Full Page Fill */
 .greeting {
   font-family: 'Fira Code', monospace;
   color: #00e6a8;
@@ -191,7 +193,6 @@ nav ul li a.active {
   margin-bottom: 40px;
 }
 
-/* CTA Buttons */
 .cta-buttons {
   display: flex;
   gap: 20px;
@@ -221,14 +222,6 @@ nav ul li a.active {
   transform: translateY(-3px);
 }
 
-.btn-outline i {
-  transition: transform 0.3s ease;
-}
-
-.btn-outline:hover i {
-  transform: translateX(5px);
-}
-
 .btn-filled {
   background-color: #00e6a8;
   color: #030812;
@@ -252,7 +245,6 @@ nav ul li a.active {
   transform: translateY(-3px);
 }
 
-/* Social Icons */
 .social-links {
   display: flex;
   gap: 18px;
@@ -279,29 +271,747 @@ nav ul li a.active {
   border-color: #00e6a8;
   background: rgba(0, 230, 168, 0.08);
   transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 230, 168, 0.2);
+}
+
+
+/* ==========================================
+   01. ABOUT ME SECTION (Next-Level Hexagon UI)
+   ========================================== */
+.about-section {
+  padding: 100px 80px;
+  width: 100%;
+  position: relative;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 3fr 2.2fr;
+  gap: 50px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(13, 25, 48, 0.6) 0%, rgba(5, 15, 30, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 230, 168, 0.15);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Section Title */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.section-title h2 {
+  font-family: 'Inter', sans-serif;
+  color: #ccd6f6;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.section-title h2 span {
+  font-family: 'Fira Code', monospace;
+  color: #00e6a8;
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.title-line {
+  height: 1px;
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(90deg, rgba(0, 230, 168, 0.4) 0%, rgba(136, 146, 176, 0.1) 100%);
+}
+
+.about-text p {
+  color: #a8b2d1;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.about-text .highlight-text {
+  margin-top: 25px;
+  font-weight: 600;
+  color: #e6f1ff;
+}
+
+.about-text .highlight-text a {
+  color: #00e6a8;
+  text-decoration: none;
+  border-bottom: 1px dashed #00e6a8;
+  transition: all 0.3s ease;
+}
+
+.about-text .highlight-text a:hover {
+  border-bottom-style: solid;
+  text-shadow: 0 0 10px rgba(0, 230, 168, 0.5);
+}
+
+/* ==========================================
+   PROFESSIONAL TECH DASHBOARD IMAGE FRAME
+   ========================================== */
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Background Tech Grid Dots Pattern */
+.tech-grid-bg {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(0, 230, 168, 0.25) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  z-index: 0;
+  border-radius: 16px;
+}
+
+/* Main Profile Card Frame */
+.profile-card {
+  position: relative;
+  width: 100%;
+  background: rgba(8, 18, 33, 0.85);
+  border: 1px solid rgba(0, 230, 168, 0.25);
+  border-radius: 16px;
+  padding: 12px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(0, 230, 168, 0.08);
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 230, 168, 0.5);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7),
+              0 0 30px rgba(0, 230, 168, 0.15);
+}
+
+/* Header Dots (IDE/Browser Window Look) */
+.card-header-dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+.card-header-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.card-header-dots .red { background-color: #ff5f56; }
+.card-header-dots .yellow { background-color: #ffbd2e; }
+.card-header-dots .green { background-color: #27c93f; }
+
+/* Image Container */
+.image-box {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #030812;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: grayscale(20%) contrast(1.05); /* Professional slight desaturation */
+}
+
+/* Soft Hover Overlay */
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(3, 8, 18, 0.8) 100%);
+  pointer-events: none;
+}
+
+.profile-card:hover .image-box img {
+  transform: scale(1.04);
+  filter: grayscale(0%) contrast(1.1); /* Full color on hover */
+}
+
+/* Floating Pills / Badges */
+.floating-pill {
+  position: absolute;
+  background: rgba(3, 12, 26, 0.9);
+  border: 1px solid rgba(0, 230, 168, 0.35);
+  backdrop-filter: blur(12px);
+  padding: 8px 16px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+/* Top Right Pill */
+.top-pill {
+  top: 25px;
+  right: -15px;
+  color: #00e6a8;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.top-pill i {
+  color: #00e6a8;
+}
+
+/* Bottom Left Pill */
+.bottom-pill {
+  bottom: 25px;
+  left: -20px;
+  animation: floatSlow 4s ease-in-out infinite 2s; /* Delayed offset animation */
+}
+
+.status-pulse {
+  width: 10px;
+  height: 10px;
+  background-color: #00e6a8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00e6a8;
+}
+
+.pill-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pill-text strong {
+  color: #e6f1ff;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.pill-text small {
+  color: #8892b0;
+  font-size: 10px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Floating Keyframes */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .about-image-wrapper {
+    max-width: 300px;
+    margin-top: 20px;
+  }
+
+  .image-box {
+    height: 320px;
+  }
+
+  .top-pill {
+    right: -5px;
+  }
+
+  .bottom-pill {
+    left: -5px;
+  }
+}
+
+/* ==========================================
+   02. SKILLS SECTION
+   ========================================== */
+.skills-section {
+  padding: 100px 80px;
+  width: 100%;
+}
+
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skills-intro {
+  color: #8892b0;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* Category Box */
+.skill-category {
+  background: linear-gradient(135deg, rgba(13, 25, 48, 0.5) 0%, rgba(5, 15, 30, 0.7) 100%);
+  border: 1px solid rgba(0, 230, 168, 0.12);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  border-color: rgba(0, 230, 168, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 230, 168, 0.05);
+}
+
+.skill-category h3 {
+  color: #e6f1ff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-category h3 i {
+  color: #00e6a8;
+  font-size: 16px;
+}
+
+/* Grid Layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 20px;
+}
+
+/* Single Skill Card */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* App-Icon Style Tile Box */
+.skill-card img {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  background-color: #0d1728; /* Dark tile background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  object-fit: contain;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.skill-card img.django-icon {
+  filter: brightness(1.6); /* Visiblity boost for dark Django icon */
+}
+
+.skill-card span {
+  color: #a8b2d1;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+.skill-card:hover img {
+  border-color: #00e6a8;
+  background-color: #13223b;
+  box-shadow: 0 10px 20px rgba(0, 230, 168, 0.25);
+}
+
+.skill-card:hover span {
+  color: #00e6a8;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .skills-section {
+    padding: 60px 20px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+    gap: 15px;
+  }
+
+  .skill-card img {
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .skill-card span {
+    font-size: 11px;
+  }
+}
+
+/* ==========================================
+   03. EXPERIENCE SECTION
+   ========================================== */
+.experience-section {
+  padding: 100px 80px;
+  width: 100%;
+}
+
+.experience-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.experience-intro {
+  color: #8892b0;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+/* Timeline Layout Structure */
+.timeline-wrapper {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid rgba(0, 230, 168, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+/* Glowing Timeline Dot */
+.timeline-dot {
+  position: absolute;
+  left: -37px;
+  top: 22px;
+  width: 12px;
+  height: 12px;
+  background-color: #00e6a8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00e6a8;
+  border: 2px solid #030812;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.4);
+  box-shadow: 0 0 18px #00e6a8;
+}
+
+/* Timeline Glass Content Box */
+.timeline-content {
+  background: linear-gradient(135deg, rgba(13, 25, 48, 0.5) 0%, rgba(5, 15, 30, 0.75) 100%);
+  border: 1px solid rgba(0, 230, 168, 0.12);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  border-color: rgba(0, 230, 168, 0.35);
+  transform: translateX(8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 230, 168, 0.05);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.job-header h3 {
+  color: #e6f1ff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.company-tag {
+  color: #00e6a8;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+  background: rgba(0, 230, 168, 0.08);
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 230, 168, 0.2);
+}
+
+.job-date {
+  display: inline-block;
+  color: #8892b0;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 20px;
+}
+
+.job-date i {
+  margin-right: 5px;
+}
+
+.job-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.job-details li {
+  position: relative;
+  padding-left: 20px;
+  color: #a8b2d1;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.job-details li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #00e6a8;
+  font-size: 14px;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 900px) {
-  header.navbar {
-    padding: 18px 25px;
+  .experience-section {
+    padding: 60px 20px;
+  }
+
+  .timeline-wrapper {
+    padding-left: 20px;
+  }
+
+  .timeline-dot {
+    left: -27px;
+  }
+
+  .job-header {
     flex-direction: column;
-    gap: 15px;
+    align-items: flex-start;
   }
 
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+  .timeline-content {
+    padding: 20px;
   }
 
-  .hero-section {
-    padding: 160px 25px 60px 25px;
+  .timeline-item:hover .timeline-content {
+    transform: translateX(4px);
+  }
+}
+
+
+/* ==========================================
+   04. PROJECTS SECTION
+   ========================================== */
+.projects-section {
+  padding: 100px 80px;
+  width: 100%;
+}
+
+.projects-intro {
+  color: #8892b0;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+  gap: 30px;
+}
+
+/* Project Card Container */
+.project-card {
+  background: linear-gradient(135deg, rgba(13, 25, 48, 0.5) 0%, rgba(5, 15, 30, 0.75) 100%);
+  border: 1px solid rgba(0, 230, 168, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: rgba(0, 230, 168, 0.35);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 230, 168, 0.08);
+}
+
+/* Image Wrapper Layout */
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 260px; /* Enhanced height for design previews */
+  overflow: hidden;
+  background-color: #070e1b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* Focuses on the top header of posters/calendars */
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(0.9);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.06);
+  filter: brightness(1);
+}
+
+/* Overlay Effect */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 8, 18, 0.65);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-btn {
+  color: #030812;
+  background-color: #00e6a8;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 230, 168, 0.3);
+  transition: all 0.25s ease;
+}
+
+.project-btn:hover {
+  background-color: #ffffff;
+  color: #0d1728;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* Info Details */
+.project-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-tag {
+  color: #00e6a8;
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-content h3 {
+  color: #e6f1ff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.project-content p {
+  color: #a8b2d1;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Tech Badges */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-tech span {
+  color: #8892b0;
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .projects-section {
+    padding: 60px 20px;
   }
 
-  .btn-outline, .btn-filled {
-    width: 100%;
-    justify-content: center;
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 220px;
   }
 }
