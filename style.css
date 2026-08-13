@@ -1015,3 +1015,562 @@ nav ul li a.active {
     height: 220px;
   }
 }
+
+/* ==========================================
+   05. ACHIEVEMENTS SECTION
+   ========================================== */
+.achievements-section {
+  padding: 100px 80px;
+  width: 100%;
+}
+
+.achievements-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.achievements-intro {
+  color: #8892b0;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+/* Grid Wrapper */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 30px;
+}
+
+/* Base Achievement Card Style */
+.achievement-card {
+  background: linear-gradient(135deg, rgba(13, 25, 48, 0.5) 0%, rgba(5, 15, 30, 0.75) 100%);
+  border: 1px solid rgba(0, 230, 168, 0.12);
+  border-radius: 16px;
+  padding: 35px 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.achievement-card:hover {
+  border-color: rgba(0, 230, 168, 0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 230, 168, 0.08);
+}
+
+/* Featured Winner Card Accent */
+.featured-card {
+  border-left: 4px solid #00e6a8;
+}
+
+/* Badge Icon Container */
+.achievement-badge {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+  background: rgba(0, 230, 168, 0.1);
+  border: 1px solid rgba(0, 230, 168, 0.25);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #00e6a8;
+  box-shadow: 0 4px 15px rgba(0, 230, 168, 0.15);
+}
+
+.rating-badge {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: rgba(255, 193, 7, 0.25);
+  color: #ffc107;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.15);
+}
+
+/* Card Content Details */
+.achievement-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.achievement-tag {
+  color: #00e6a8;
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.achievement-content h3 {
+  color: #e6f1ff;
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.institution {
+  color: #8892b0;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 12px;
+}
+
+.achievement-desc {
+  color: #a8b2d1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Rating Stars Styling */
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+  color: #ffc107;
+  font-size: 14px;
+}
+
+.rating-stars span {
+  color: #8892b0;
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+  margin-left: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .achievements-section {
+    padding: 60px 20px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-card {
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .achievement-badge {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 18px;
+  }
+}
+
+/* ==========================================
+   06. EDUCATION SECTION
+   ========================================== */
+.education-section {
+  padding: 100px 80px;
+  width: 100%;
+}
+
+.education-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.education-intro {
+  color: #8892b0;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+/* Cards Wrapper */
+.education-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Card Styling */
+.education-card {
+  background: linear-gradient(135deg, rgba(13, 25, 48, 0.5) 0%, rgba(5, 15, 30, 0.75) 100%);
+  border: 1px solid rgba(0, 230, 168, 0.12);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  transition: all 0.35s ease;
+}
+
+.education-card:hover {
+  border-color: rgba(0, 230, 168, 0.35);
+  transform: translateX(8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 230, 168, 0.08);
+}
+
+/* Active Highlight for Ongoing Degree */
+.active-card {
+  border-left: 4px solid #00e6a8;
+}
+
+/* Icon Box */
+.education-icon {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+  background: rgba(0, 230, 168, 0.08);
+  border: 1px solid rgba(0, 230, 168, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #00e6a8;
+}
+
+/* Content Details */
+.education-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.edu-header h3 {
+  color: #e6f1ff;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.edu-status {
+  color: #00e6a8;
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+  background: rgba(0, 230, 168, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 230, 168, 0.3);
+}
+
+.edu-year {
+  color: #8892b0;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+}
+
+.institution-name {
+  color: #a8b2d1;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.institution-name i {
+  color: #00e6a8;
+  margin-right: 6px;
+}
+
+.location {
+  color: #8892b0;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.location i {
+  margin-right: 4px;
+}
+
+/* Details & Badges */
+.edu-details {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.semester-badge {
+  color: #00e6a8;
+  background: rgba(0, 230, 168, 0.08);
+  border: 1px solid rgba(0, 230, 168, 0.2);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+}
+
+.group-tag {
+  color: #8892b0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .education-section {
+    padding: 60px 20px;
+  }
+
+  .education-card {
+    flex-direction: column;
+    padding: 22px;
+    gap: 15px;
+  }
+
+  .edu-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-card:hover {
+    transform: translateX(4px);
+  }
+}
+
+
+/* ==========================================
+   07. CONTACT SECTION & FOOTER
+   ========================================== */
+.contact-section {
+  padding: 100px 80px 60px 80px;
+  width: 100%;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-intro {
+  color: #8892b0;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+/* Wrapper Layout */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+}
+
+/* Left Side: Info Cards */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: linear-gradient(135deg, rgba(13, 25, 48, 0.5) 0%, rgba(5, 15, 30, 0.75) 100%);
+  border: 1px solid rgba(0, 230, 168, 0.12);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  border-color: rgba(0, 230, 168, 0.35);
+  transform: translateX(6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 230, 168, 0.05);
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: rgba(0, 230, 168, 0.1);
+  border: 1px solid rgba(0, 230, 168, 0.25);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00e6a8;
+  font-size: 18px;
+}
+
+.info-text span {
+  display: block;
+  color: #8892b0;
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 2px;
+}
+
+.info-text a, .info-text p {
+  color: #e6f1ff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.info-text a:hover {
+  color: #00e6a8;
+}
+
+/* Social Media Container */
+.social-links-container {
+  margin-top: 10px;
+}
+
+.social-links-container h4 {
+  color: #a8b2d1;
+  font-size: 14px;
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  background: rgba(13, 25, 48, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8b2d1;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00e6a8;
+  border-color: #00e6a8;
+  background: rgba(0, 230, 168, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Right Side: Form Container */
+.contact-form-container {
+  background: linear-gradient(135deg, rgba(13, 25, 48, 0.5) 0%, rgba(5, 15, 30, 0.75) 100%);
+  border: 1px solid rgba(0, 230, 168, 0.12);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: #070e1b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: #e6f1ff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00e6a8;
+  box-shadow: 0 0 12px rgba(0, 230, 168, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.send-btn {
+  background: #00e6a8;
+  color: #030812;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 15px rgba(0, 230, 168, 0.25);
+}
+
+.send-btn:hover {
+  background: #ffffff;
+  color: #0d1728;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content p {
+  color: #8892b0;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+  margin: 4px 0;
+}
+
+.footer-content i {
+  color: #ff4b4b;
+}
+
+.copyright {
+  font-size: 12px !important;
+  opacity: 0.7;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 60px 20px 30px 20px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .send-btn {
+    width: 100%;
+  }
+}
