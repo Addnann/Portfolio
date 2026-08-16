@@ -1574,3 +1574,195 @@ nav ul li a.active {
     width: 100%;
   }
 }
+
+/* ==========================================
+   THEME VARIABLES & MULTI-THEME TOGGLE
+   ========================================== */
+:root {
+  --bg-color: #030812;
+  --card-bg: linear-gradient(135deg, rgba(13, 25, 48, 0.6) 0%, rgba(5, 15, 30, 0.85) 100%);
+  --text-primary: #e6f1ff;
+  --text-secondary: #8892b0;
+  --accent-color: #00e6a8;
+  --accent-glow: rgba(0, 230, 168, 0.25);
+  --border-color: rgba(0, 230, 168, 0.15);
+  --navbar-bg: rgba(3, 8, 18, 0.85);
+}
+
+/* Cyberpunk Neon Theme */
+[data-theme="cyberpunk"] {
+  --bg-color: #0d0221;
+  --card-bg: linear-gradient(135deg, rgba(26, 11, 46, 0.7) 0%, rgba(15, 5, 29, 0.9) 100%);
+  --text-primary: #00f5d4;
+  --text-secondary: #c77dff;
+  --accent-color: #ff007f;
+  --accent-glow: rgba(255, 0, 127, 0.4);
+  --border-color: rgba(255, 0, 127, 0.3);
+  --navbar-bg: rgba(13, 2, 33, 0.88);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-color: #f4f7fe;
+  --card-bg: linear-gradient(135deg, #ffffff 0%, #f0f4f9 100%);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #0284c7;
+  --accent-glow: rgba(2, 132, 199, 0.2);
+  --border-color: rgba(2, 132, 199, 0.2);
+  --navbar-bg: rgba(244, 247, 254, 0.88);
+}
+
+/* Base Variable Overrides */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-secondary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+header.navbar {
+  background-color: var(--navbar-bg);
+}
+
+.logo, .greeting, .subtitle, .achievement-tag, .project-tag, .edu-status {
+  color: var(--accent-color) !important;
+}
+
+.name, .section-title h2, .edu-header h3 {
+  color: var(--text-primary) !important;
+}
+
+/* Theme Switcher UI */
+.theme-switcher {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.theme-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--accent-color);
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: var(--accent-glow);
+  transform: rotate(30deg);
+}
+
+.theme-menu {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  min-width: 160px;
+}
+
+.theme-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.theme-menu button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.theme-menu button:hover {
+  background: var(--accent-glow);
+  color: var(--accent-color);
+}
+
+/* ==========================================
+   SCROLL-TO-TOP BUTTON (WITH PROGRESS RING)
+   ========================================== */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 46px;
+  height: 46px;
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 50%;
+  color: var(--accent-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 99;
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 25px var(--accent-glow);
+}
+
+.scroll-top-btn i {
+  position: absolute;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.scroll-top-btn:hover i {
+  transform: translateY(-2px);
+}
+
+/* SVG Circular Progress Bar */
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.1s ease;
+  stroke: var(--accent-color);
+}
